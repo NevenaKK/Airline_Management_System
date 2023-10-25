@@ -1,13 +1,14 @@
 package airline;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
 public class Login extends JFrame implements ActionListener {
 
-    JLabel lbl_username, lbl_password;
+    JLabel lbl_username, lbl_password, background;
     JPasswordField txt_password;
     JTextField txt_username;
     JButton btn_login, btn_cancel;
@@ -20,33 +21,44 @@ public class Login extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setLayout(null);
+        this.getContentPane().setBackground(new Color(87, 87, 87, 255));
+        background = new JLabel("");
+        background.setIcon(new ImageIcon(ClassLoader.getSystemResource("airplane.png")));
+        background.setSize(580, 580);
 
         lbl_username = new JLabel("Username");
         lbl_username.setBounds(60, 200, 100, 33);
+        lbl_username.setFont(new Font(Font.MONOSPACED, Font.ITALIC | Font.BOLD, 16));
 
 
         lbl_password = new JLabel("Password");
         lbl_password.setBounds(60, 250, 100, 33);
+        lbl_password.setFont(new Font(Font.MONOSPACED, Font.ITALIC | Font.BOLD, 16));
 
 
 
         txt_username = new JTextField();
         txt_username.setBounds(160, 200, 250, 33);
-
+        txt_username.setFont(new Font(Font.MONOSPACED, Font.ITALIC, 15));
 
         txt_password = new JPasswordField();
         txt_password.setBounds(160, 250, 250, 33);
-
+        txt_password.setFont(new Font(Font.MONOSPACED, Font.ITALIC, 15));
 
         btn_login = new JButton("Login");
         btn_login.setBounds(160, 305, 120, 30);
+        btn_login.setFont(new Font(Font.MONOSPACED, Font.ITALIC | Font.BOLD, 15));
+        btn_login.setFocusable(false);
         btn_login.addActionListener(this);
 
 
         btn_cancel = new JButton("Cancel");
+        btn_cancel.setBounds(290, 305, 120, 30);
+        btn_cancel.setFont(new Font(Font.MONOSPACED, Font.ITALIC | Font.BOLD, 15));
         btn_cancel.setFocusable(false);
         btn_cancel.addActionListener(this);
 
+        this.add(background);
         this.add(lbl_username);
         this.add(txt_username);
         this.add(lbl_password);
