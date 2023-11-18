@@ -16,7 +16,6 @@ public class Conn {
 
     public Conn() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, username, password);
             stm = con.createStatement();
 

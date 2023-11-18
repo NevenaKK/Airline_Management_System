@@ -21,7 +21,7 @@ public class Login extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setLayout(null);
-        this.getContentPane().setBackground(new Color(87, 87, 87, 255));
+        this.getContentPane().setBackground(Color.white);
         background = new JLabel("");
         background.setIcon(new ImageIcon(ClassLoader.getSystemResource("airplane.png")));
         background.setSize(580, 580);
@@ -77,7 +77,8 @@ public class Login extends JFrame implements ActionListener {
             try {
                 Conn con = new Conn();
                 String username = txt_username.getText();
-                String password = new String(txt_password.getPassword());
+                char[] passwordChar=txt_password.getPassword();
+                String password = new String(passwordChar);
                 String q = "select * from login where username='" + username + "' and password='" + password + "'";
                 ResultSet resultSet = con.stm.executeQuery(q);
 

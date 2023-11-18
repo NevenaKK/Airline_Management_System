@@ -12,7 +12,6 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
 
-        this.setTitle("Airline reservation management system");
         this.setSize(842, 682);
         this.setLayout(null);
         this.setLocationRelativeTo(null);
